@@ -8,26 +8,14 @@ layout: default
   </header>
 
   <div class="post-content">
-    <script>
-    $(document).ready(function() {
-    	{% for mpage in site.pages %}
-      	{% if mpage.vimeoId and mpage.title != None and mpage.vimeoId != page.vimeoId %}
-          $.getJSON("http://www.vimeo.com/api/v2/video/" + {{ mpage.vimeoId }}  + ".json?callback=?", {format: "json"}, function(data) {
-            $("#" + data[0].id).attr("src", data[0].thumbnail_small);
-          });
-      	{% endif %}
-    	{% endfor %}
-    }); 
-    </script>
-
     {% if page.vimeoId %}
       <iframe src="http://player.vimeo.com/video/{{ page.vimeoId }}" width="900" height="500" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     {% endif %}
 
     {% for mpage in site.pages %}
-      {% if mpage.vimeoId and mpage.title != None and mpage.vimeoId != page.vimeoId %}
+      {% if mpage.vimeoId and mpage.thumbnail_small != None and mpage.title != None and mpage.vimeoId != page.vimeoId %}
         <a class="iframeLink" href="{{ mpage.url | prepend: site.baseurl }}" style="width: 150px; height: 84px;">
-          <img id="{{ mpage.vimeoId }}"/>
+          <img src="{{ mpage.thumbnail_small }}"/>
         </a>
       {% endif %}
     {% endfor %}
