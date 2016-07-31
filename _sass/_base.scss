@@ -165,10 +165,29 @@ pre {
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        max-width: -webkit-calc(#{$on-laptop} - (#{$spacing-unit}));
+        max-width:         calc(#{$on-laptop} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
+    }
+
+    @include media-query($on-palm) {
+        max-width: -webkit-calc(#{$on-palm} - (#{$spacing-unit}));
+        max-width:         calc(#{$on-palm} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+#mainVideo {
+    width: $video-width;
+    height: $video-width / $video-aspect;
+
+    @include media-query($on-palm) {
+        width: -webkit-calc(#{$on-palm});
+        width:         calc(#{$on-palm});
+        height: -webkit-calc(#{$on-palm} / #{$video-aspect});
+        height:         calc(#{$on-palm} / #{$video-aspect});
     }
 }
 
