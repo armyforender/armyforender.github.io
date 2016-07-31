@@ -14,7 +14,7 @@ layout: default
 
     {% for mpage in site.pages %}
       {% if mpage.vimeoId and mpage.thumbnail_small != None and mpage.title != None and mpage.vimeoId != page.vimeoId %}
-        <a class="iframeLink" href="{{ mpage.url | prepend: site.baseurl }}" style="width: 150px; height: 84px;">
+        <a class="videoLink" href="{{ mpage.url | prepend: site.baseurl }}" style="width: 150px; height: 84px;">
           <img src="{{ mpage.thumbnail_small }}"/>
         </a>
       {% endif %}
