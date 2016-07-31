@@ -179,19 +179,6 @@ pre {
     }
 }
 
-#mainVideo {
-    width: $video-width;
-    height: $video-width / $video-aspect;
-
-    @include media-query($on-palm) {
-        width: -webkit-calc(#{$on-palm});
-        width:         calc(#{$on-palm});
-        height: -webkit-calc(#{$on-palm} / #{$video-aspect});
-        height:         calc(#{$on-palm} / #{$video-aspect});
-    }
-}
-
-
 
 /**
  * Clearfix
@@ -223,3 +210,27 @@ pre {
         }
     }
 }
+
+
+
+@media screen and (max-device-width: 480px){
+    body{
+        -webkit-text-size-adjust:none;
+        font-family:Helvetica, Arial, Verdana, sans-serif;
+        padding:5px;
+    }
+}
+
+#mainVideo {
+    width: $video-width;
+    height: $video-width / $video-aspect;
+    margin-bottom: 1px;
+
+    @include media-query($on-palm) {
+        width: -webkit-calc(#{$on-palm});
+        width:         calc(#{$on-palm});
+        height: -webkit-calc(#{$on-palm} / #{$video-aspect});
+        height:         calc(#{$on-palm} / #{$video-aspect});
+    }
+}
+
