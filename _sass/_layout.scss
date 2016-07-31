@@ -241,8 +241,13 @@
     }
 }
 
-a.videoLink {
+a.videoLink, a.videoLink img {
     margin: 0px;
-    padding-right: 3px;
-    padding-bottom: 3px;
+    padding: 0px;
+    display: inline-block;
 }
+a.videoLink img {
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
